@@ -1,0 +1,15 @@
+@model HealthTipsPortal.Models.HealthTip
+
+@{
+    ViewData["Title"] = "Daily Health Tip";
+}
+
+<div class="text-center">
+    <h2 class="text-success">🌟 Today's Health Tip</h2>
+    <div class="card mt-4 shadow p-4 bg-light">
+        <h4 class="text-primary">@Model.Title</h4>
+        <p class="lead">@Model.TipText</p>
+        <small class="text-muted">Category: @Model.Category</small><br />
+        <small class="text-muted">Added on: @Model.CreatedAt.ToShortDateString()</small>
+    </div>
+</div>

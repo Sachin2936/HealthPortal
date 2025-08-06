@@ -1,0 +1,39 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Health Tips Portal</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/dashboard-style.css" />
+</head>
+<body>
+    <header class="bg-success text-white p-3">
+        <div class="container d-flex justify-content-between">
+            <h2>🌿 Health Tips Portal</h2>
+            <div>
+                <a href="/" class="btn btn-light">🏠 Home</a>
+                <a href="/HealthTips/Daily" class="btn btn-light">📅 Daily Tip</a>
+                <a href="/HealthTips/Categories" class="btn btn-light">📚 Categories</a>
+                <a href="/Identity/Account/Logout" class="btn btn-warning">🚪 Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+
+    <footer class="text-center mt-5 mb-3 text-muted">
+        Logged in as <strong>@(User.Identity?.IsAuthenticated == true ? User.Identity.Name : "Guest")</strong> |
+        Created by Sachin Singh
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

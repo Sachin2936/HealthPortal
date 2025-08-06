@@ -1,0 +1,34 @@
+@{
+  ViewData["Title"] = "Health Tips Portal";
+}
+<link rel="stylesheet" href="~/css/pastel-ui.css" />
+
+<div class="hero-section">
+  <h1 class="hero-title">🌿 Health Tips Portal</h1>
+  <p class="hero-subtext">Discover, Learn & Thrive Every Day</p>
+
+  <div class="d-flex justify-content-center flex-wrap mt-4">
+    <a href="/HealthTips/Daily" class="btn-custom m-2">📅 Daily Tip</a>
+    <a href="/HealthTips/Categories" class="btn-custom m-2">📚 Categories</a>
+    <a href="/Identity/Account/Login" class="btn-custom m-2">🔐 Login/Register</a>
+  </div>
+
+  <div class="feature-cards mt-5">
+    <div class="card">
+      <h5>📆 Today's Tip</h5>
+      <p>@(Model?.DailyTip ?? "Stay hydrated — drink 2 liters of water!")</p>
+    </div>
+    <div class="card">
+      <h5>🏷️ Popular Category</h5>
+      <p>@(Model?.PopularCategory ?? "Nutrition")</p>
+    </div>
+    <div class="card">
+      <h5>📝 Tip Count</h5>
+      <p>@(Model?.TotalTips ?? 0) total tips</p>
+    </div>
+  </div>
+</div>
+
+<footer class="text-center mt-5 mb-2">
+  <p>Created with ❤️ by <strong>Sachin Singh</strong></p>
+</footer>

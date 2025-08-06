@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tips Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/landing-style.css" />
+</head>
+<body>
+    <div class="hero-container">
+        <div class="glass-box">
+            <h1>🌿 Health Tips Portal</h1>
+            <p>Your daily dose of wellness and inspiration</p>
+            <div class="button-group">
+                <a href="/HealthTips/Daily" class="glass-btn">✨ Daily Tip</a>
+                <a href="/HealthTips/Categories" class="glass-btn">📚 Categories</a>
+                <a href="/Identity/Account/Login" class="glass-btn">🔐 Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.json');
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* 🌿 Background Video */
+.hero-video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -10;
+    opacity: 0.3;
+    filter: brightness(0.8) saturate(1.2);
+}
+
+/* 🌐 Glassmorphic Overlay */
+.hero-section {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 80px 40px;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    max-width: 960px;
+    animation: fadeIn 1.2s ease;
+}
+
+/* ✨ Typography */
+.hero-title {
+    font-size: 3.5rem;
+    color: #34a853;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+}
+
+.hero-subtext {
+    font-size: 1.4rem;
+    color: #ffffffdd;
+    margin-top: 10px;
+}
+
+/* 🌈 Buttons */
+.btn-custom {
+    font-size: 1.2rem;
+    margin: 20px 15px;
+    padding: 14px 28px;
+    border-radius: 50px;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.btn-custom:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+/* 🌙 Dark Mode */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .hero-section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 50px;
+    background: #fff;
+    color: #333;
+    cursor: pointer;
+}
+
+/* 🍃 Floating Leaf Animation */
+@keyframes floatLeaf {
+    0%   { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.leaf {
+    position: absolute;
+    top: -40px;
+    width: 40px;
+    z-index: 1;
+    animation: floatLeaf 12s linear infinite;
+}
+
+/* 🎬 Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive */
+@media screen and (max-width: 768px) {
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtext { font-size: 1.2rem; }
+    .btn-custom { display: block; width: 80%; margin: 15px auto; }
+}
+/* ✨ Fullscreen Background */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0fdf4;
+    overflow-x: hidden;
+}
+
+/* 🧩 Motivational Quote Style */
+#quote-box {
+    font-size: 1.3rem;
+    color: #333;
+    font-style: italic;
+    margin-top: 30px;
+    animation: fadeQuote 8s infinite;
+}
+
+@keyframes fadeQuote {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* 🟩 Responsive Navbar */
+.navbar {
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    color: white;
+}
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.navbar-toggle {
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+    }
+    .navbar-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+/* 🎆 Particles container */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* ✨ Motivational Quote Box */
+#quote-box {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #2e7d32;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    animation: fadeInQuote 1s ease-in-out;
+}
+
+@keyframes fadeInQuote {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+/* AI Chat UI */
+#chat-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 999;
+}
+#chat-box {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #1e1e2f;
+    color: white;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
+}
+#chat-box.open {
+    display: flex;
+}
+#chat-messages {
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+}
+.chat-message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.chat-message.user {
+    background: #007bff;
+    align-self: flex-end;
+}
+.chat-message.ai {
+    background: #444;
+    align-self: flex-start;
+}
+#chat-input {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    background: transparent;
+}

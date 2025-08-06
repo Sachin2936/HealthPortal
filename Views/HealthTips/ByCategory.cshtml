@@ -1,0 +1,26 @@
+@model List<HealthTipsPortal.Models.HealthTip>
+@{
+    ViewData["Title"] = "Tips in Category";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">📂 @ViewBag.CategoryName Tips</h2>
+
+    @if (Model.Count == 0)
+    {
+        <p>No tips found in this category.</p>
+    }
+    else
+    {
+        <div class="list-group">
+            @foreach (var tip in Model)
+            {
+                <div class="list-group-item">
+                    <h5>@tip.Title</h5>
+                    <p>@tip.TipText</p>
+                    <small class="text-muted">🕒 @tip.CreatedAt.ToShortDateString()</small>
+                </div>
+            }
+        </div>
+    }
+</div>

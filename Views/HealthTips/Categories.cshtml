@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Explore Health Categories";
+}
+
+<link rel="stylesheet" href="~/css/modern-ui.css" />
+
+<div class="container mt-5">
+    <h2 class="hero-title text-center mb-4">📚 Explore Health Categories</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card h-100 shadow-sm border-success">
+                <div class="card-body">
+                    <h5 class="card-title">🍎 Nutrition</h5>
+                    <p class="card-text">Tips about balanced diet, superfoods, and healthy eating habits.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-primary">
+                <div class="card-body">
+                    <h5 class="card-title">🏋️ Exercise</h5>
+                    <p class="card-text">Workout routines, stretches, and physical activity guides.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-warning">
+                <div class="card-body">
+                    <h5 class="card-title">🧘‍♀️ Mental Health</h5>
+                    <p class="card-text">Meditation, stress management, and mental wellness techniques.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-info">
+                <div class="card-body">
+                    <h5 class="card-title">😴 Sleep</h5>
+                    <p class="card-text">Learn how proper sleep enhances productivity and mood.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-danger">
+                <div class="card-body">
+                    <h5 class="card-title">🚶 Lifestyle</h5>
+                    <p class="card-text">Daily habits, routines, and tips for a better, healthier life.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100 shadow-sm border-dark">
+                <div class="card-body">
+                    <h5 class="card-title">💧 Hydration</h5>
+                    <p class="card-text">Why water is life and how to stay hydrated throughout the day.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@model IEnumerable<string>
+@{
+    ViewData["Title"] = "Health Tip Categories";
+    Layout = "~/Views/Shared/_LoggedInLayout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/pastel-ui.css" />
+
+<div class="hero-section">
+    <h2 class="hero-title">📚 Categories</h2>
+    <div class="feature-cards mt-4">
+        @foreach (var cat in Model)
+        {
+            <div class="card">
+                <h5>@cat</h5>
+                <p>
+                  <a href="/HealthTips/Category?name=@cat" class="btn-custom">Explore @cat</a>
+                </p>
+            </div>
+        }
+    </div>
+</div>
